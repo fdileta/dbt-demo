@@ -1,0 +1,21 @@
+# Example profile for local development.
+# Create ~/.dbt/profiles.yml
+# Copy the below config
+# Add keyfile path to service account JSON
+
+config:
+  send_anonymous_usage_stats: False
+  printer_width: 120
+
+jaffle_shop:
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: dbt-demo-project
+      dataset: dbt
+      threads: 8
+      keyfile: [/path/to/bigquery/keyfile.json]
+      location: europe-west2
+
+  target: dev
