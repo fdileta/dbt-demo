@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table',
+        schema='core',
+    )
+}}
+
 {% set payment_methods = ['credit_card', 'coupon', 'bank_transfer', 'gift_card'] %}
 
 with orders as (

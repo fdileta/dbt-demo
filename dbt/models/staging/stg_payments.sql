@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table',
+        schema='staging',
+    )
+}}
+
 with source as (
     
     {#-

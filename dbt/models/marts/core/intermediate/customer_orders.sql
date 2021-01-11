@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table',
+        schema='intermediate',
+    )
+}}
+
 with orders as (
 
     select * from {{ ref('stg_orders') }}
