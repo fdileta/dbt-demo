@@ -2,6 +2,7 @@
     config(
         materialized='table',
         schema='intermediate',
+        tags=['daily'],
     )
 }}
 
