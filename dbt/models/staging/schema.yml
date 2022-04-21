@@ -6,7 +6,9 @@ models:
       - name: customer_id
         tests:
           - unique
-          - not_null
+          - not_nul
+          
+          l
 
   - name: stg_orders
     columns:
