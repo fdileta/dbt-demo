@@ -1,3 +1,11 @@
+{{
+    config(
+        materialized='table',
+        schema='intermediate',
+        tags=['daily'],
+    )
+}}
+
 with payments as (
 
     select * from {{ ref('stg_payments') }}

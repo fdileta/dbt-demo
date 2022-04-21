@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table',
+        schema='core',
+    )
+}}
+
 with customers as (
 
     select * from {{ ref('stg_customers') }}
@@ -33,4 +40,4 @@ final as (
 
 )
 
-select * from final
+select * from final limit 100
