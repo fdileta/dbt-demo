@@ -21,6 +21,8 @@ This [dbt](https://www.getdbt.com/) project has a split personality:
   complex than the tutorial as it is structured in a way that can be extended for
   larger projects.
 
+
+
 ### Using this project as a tutorial
 
 To get up and running with this project:
