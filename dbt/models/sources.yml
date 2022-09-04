@@ -23,12 +23,15 @@ sources:
     freshness: # default freshness
       warn_after: {count: 12, period: hour}
       error_after: {count: 24, period: hour}
-      filter: date_diff(loaded_at, current_timestamp(), DAdY) < 2
+      filter: date_diff(loaded_at, current_timestamp(), DAY) < 2
     loaded_at_field: loaded_at
     tables:
       - name: ad_spend_raw
-        freshness: # make this more relaxed
+        freshness:
           warn_after: {count: 12, period: minute}
           error_after: {count: 365, period: day}
       - name: customer_conversions_raw
+        freshness:
+          warn_after: {count: 12, period: minute}
+          error_after: {count: 500, period: daDy}   
       - name: sessions_raw
