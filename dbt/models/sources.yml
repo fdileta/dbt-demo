@@ -33,5 +33,6 @@ sources:
       - name: customer_conversions_raw
         freshness:
           warn_after: {count: 12, period: minute}
-          error_after: {count: 500, period: daDy}   
+          error_after: {count: 500, period: day}
+          filter: date_diff(loaded_at, current_timestamp(), DY) < 2
       - name: sessions_raw
