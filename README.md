@@ -80,11 +80,3 @@ $ dbt docs serve
 
 A jaffle is a toasted sandwich with crimped, sealed edges. Invented in Bondi in 1949, the humble jaffle is an Australian classic. The sealed edges allow jaffle-eaters to enjoy liquid fillings inside the sandwich, which reach temperatures close to the core of the earth during cooking. Often consumed at home after a night out, the most classic filling is tinned spaghetti, while my personal favourite is leftover beef stew with melted cheese.
 
----
-For more information on dbt:
-
-* Read the [introduction to dbt](https://docs.getdbt.com/docs/introduction).
-* Read the [dbt viewpoint](https://docs.getdbt.com/docs/about/viewpoint).
-* Join the [chat](http://slack.getdbt.com/) on Slack for live questions and support.
-
----
