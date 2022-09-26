@@ -17,6 +17,7 @@ This [dbt](https://www.getdbt.com/) project has a split personality:
   so therefore the repo cannot be run as a standalone project. The demo is more
   complex than the tutorial as it is structured in a way that can be extended for
   larger projects.
+  
 
 
 
