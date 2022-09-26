@@ -24,10 +24,6 @@ This [dbt](https://www.getdbt.com/) project has a split personality:
 
 To get up and running with this project:
 
-1. Install dbt using [these instructions](https://docs.getdbt.com/docs/installation).
-
-2. Clone this repository
-
 3. Create a profile.yml to connect to DWH and populate following the instructions in profiles.template.yml
 
 ```bash
