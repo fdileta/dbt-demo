@@ -16,6 +16,7 @@ with source as (
 ),
 
 renamed as (
+    
 
     select
         id as payment_id,
