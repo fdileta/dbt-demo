@@ -7,6 +7,7 @@ following entity-relationship diagram:
 
 This [dbt](https://www.getdbt.com/) project has a split personality:
 
+* **Tutorial**: T
 
 
 he [master](https://github.com/fishtown-analytics/jaffle_shop/tree/master)
