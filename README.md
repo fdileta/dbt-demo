@@ -76,7 +76,11 @@ $ dbt docs generate
 10. View the documentation for the project:
 
 ```bash
+
 $ dbt docs 
+
+$ dbt docs servess
+
 ```
 
 ### What is a jaffle?
