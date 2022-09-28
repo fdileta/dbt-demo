@@ -29,9 +29,7 @@ he [master](https://github.com/fishtown-analytics/jaffle_shop/tree/master)
 
 
 
-### Using this project as a tutorial
 
-To get up and running with this project:
 
 3. Create a profile.yml to connect to DWH and populate following the instructions in profiles.template.yml
 
