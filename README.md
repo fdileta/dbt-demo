@@ -19,7 +19,7 @@ This [dbt](htt
 mkdir ~/.dbt && touch ~/.dbt/profile.yml
 ```
 
-4. Change into the `dbt` directory from the command line:
+
 
 ```bash
 $ cd dbt
