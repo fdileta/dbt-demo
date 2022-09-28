@@ -1,7 +1,7 @@
 ## dbt models for `jaffle_shop`
 
 The raw data from the app consists of customers, orders, and payments, with the
-following entity-relationship diagram:
+
 
 ![Jaffle Shop ERD](./dbt/etc/jaffle_shop_erd.png)
 
