@@ -28,7 +28,6 @@ $ cd dbt
 5. Ensure your profile is setup correctly from the command line:
 
 ```bash
-$ dbt debug
 ```
 
 6. Load the CSVs with the demo data set. This materializes the CSVs as tables in
