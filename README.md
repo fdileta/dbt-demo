@@ -3,13 +3,6 @@
 The raw data from the app consists of customers, orders, and payments, with the
 following entity-relationship diagram:
 
-![Jaffle Shop ERD](./dbt/etc/jaffle_shop_erd.png)
-
-This [dbt](https://www.getdbt.com/) project has a split personality:
-
-* **Tutorial**: T
-
-
 
 
 
