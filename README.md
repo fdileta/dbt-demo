@@ -12,6 +12,8 @@ This [dbt](https://www.getdbt.com/) project has a split personality:
 
 
 
+
+
 he [master](https://github.com/fishtown-analytics/jaffle_shop/tree/master)
   branch is a useful minimum viable dbt project to get new dbt users up and
   running with their first dbt project. It includes [seed](https://docs.getdbt.com/docs/building-a-dbt-project/seeds)
