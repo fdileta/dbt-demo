@@ -20,6 +20,8 @@ This [dbt](https://www.getdbt.com/) project has a split personality:
 
 
 
+
+
 ### Using this project as a tutorial
 
 To get up and running with this project:
