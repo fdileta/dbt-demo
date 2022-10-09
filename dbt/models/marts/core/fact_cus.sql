@@ -27,9 +27,9 @@ final as (
 
     select
         customers.customer_id,
-        customer_orders.first_order_of_customer,
-        customer_orders.most_recent_order_of_customer,
-        customer_orders.total_orders_of_customre,
+        customer_orders.first_order as first_order_of_customer,
+        customer_orders.most_recent_order as most_recent_order_of_customer,
+        customer_orders.total_orders as total_orders_of_customer,
         customer_payments.total_amount as total_payments_of_customer
 
     from customers
