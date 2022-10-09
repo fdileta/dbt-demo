@@ -16,7 +16,7 @@ final as (
     select
         customer_id,
 
-        min(order_date) as first_order,
+        min(order_date) as first_order_date,
         max(order_date) as most_recent_order,
         count(order_id) as total_orders
     from orders

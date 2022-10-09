@@ -30,7 +30,7 @@ final as (
         customer_orders.first_order,
         customer_orders.most_recent_order,
         customer_orders.number_of_orders,
-        customer_payments.total_amount as customer_lifetime_value
+        customer_payments.total_amount as total_payd_in_dollars
 
     from customers
 
@@ -40,4 +40,4 @@ final as (
 
 )
 
-select * from final limit 100
+select * from final 
