@@ -15,6 +15,11 @@ with source as (
 
 ),
 
+orders_as (
+
+    select * from {{ ref('stg_orders') }}
+)
+
 renamed as (
 
     select
