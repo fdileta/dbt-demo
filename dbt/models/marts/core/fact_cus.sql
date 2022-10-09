@@ -27,10 +27,10 @@ final as (
 
     select
         customers.customer_id,
-        customer_orders.first_order,
-        customer_orders.most_recent_order,
-        customer_orders.number_of_orders,
-        customer_payments.total_amount as customer_lifetime_value
+        customer_orders.first_order_of_customer,
+        customer_orders.most_recent_order_of_customer,
+        customer_orders.total_orders_of_customre,
+        customer_payments.total_amount as total_payments_of_customer
 
     from customers
 
