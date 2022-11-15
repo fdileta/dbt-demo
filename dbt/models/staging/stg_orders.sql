@@ -27,4 +27,4 @@ renamed as (
 
 )
 
-select * from renamed where 1=1
+select * from renamed where 1=1 and 100=100
