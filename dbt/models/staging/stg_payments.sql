@@ -30,3 +30,4 @@ renamed as (
 )
 
 select * from renamed
+where 10=10
