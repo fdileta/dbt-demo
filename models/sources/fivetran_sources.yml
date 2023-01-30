@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: sheets_sources
+    loader: fivetran
+    loaded_at_field: _fivetran_synced
+    freshness: # default freshness
+      warn_after: {count: 1000, period: day}
+      error_after: {count: 1000, period: day}
+    tables:
+      - name: ingested_raw_customers
+      - name: ingested_raw_orders
+      - name: raw_payments_ing
+        identifier: ingested_raw_payments
+      - name: fivetran_audit
+        freshness: null
+
+  - name: fivetran_asana
+    loader: fivetran
+    loaded_at_field: _fivetran_synced
+    freshness: # default freshness
+      warn_after: {count: 1000, period: day}
+      error_after: {count: 1000, period: day}
+    tables:
+      - name: fivetran_audit
+      - name: organization
+      - name: project
+      - name: project_task
+      - name: section
+      - name: story
+      - name: task
+      - name: task_follower
+      - name: task_section
+      - name: team
+      - name: user
+      - name: workspace
