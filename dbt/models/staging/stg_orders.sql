@@ -21,10 +21,10 @@ renamed as (
         id as order_id,
         user_id as customer_id,
         order_date,
-        status
+        status 
 
     from source
 
 )
 
-select * from renamed
+select * from renamed where 1=1 and 100=100
