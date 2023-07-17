@@ -18,10 +18,3 @@ jaffle_shop:
       threads: 8
       keyfile: [/path/to/bigquery/keyfile.json]
       location: europe-west2
-
-d
-d
-
-dd
-
-ddd
