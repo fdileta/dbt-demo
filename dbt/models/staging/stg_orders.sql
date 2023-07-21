@@ -13,6 +13,9 @@ with source as (
     #}
     select * from {{ ref('raw_orders') }}
 
+
+    
+
 ),
 
 renamed as (
@@ -28,3 +31,4 @@ renamed as (
 )
 
 select * from renamed
+
