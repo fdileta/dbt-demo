@@ -1,0 +1,67 @@
+name: Paradime CD run
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  pardime_cd_run:
+    name: CD run
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    env:
+      SCHEDULE_NAME: cd_run
+      API_URL: ${{ secrets.PARADIME_GLOBAL_ENDPOINT }}
+      API_SECRET: ${{ secrets.PARADIME_GLOBAL_API_SECRET }}
+      API_KEY: ${{ secrets.PARADIME_GLOBAL_API_KEY }}
+      WORKSPACE_ID: ${{ secrets.PARADIME_GLOBAL_WORKSPACE_UID }}
+      BASE_PARADIME_BOLT_URL: https://app.paradime.io/bolt/run_id
+
+    steps:
+      - name: Trigger Bolt Run
+        run: |
+          response=$(curl -s -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-API-KEY: ${{ env.API_KEY }}" \
+            -H "X-API-SECRET: ${{ env.API_SECRET }}" \
+            -d "{
+                  \"query\": \"mutation trigger { triggerBoltRun(scheduleName: \\\"${{ env.SCHEDULE_NAME }}\\\") { runId } }\"
+                }" "${{ env.API_URL }}")
+          echo "$response"
+
+          runId=$(echo "$response" | jq -r '.data.triggerBoltRun.runId')
+          if [ "$runId" == "null" ]; then
+            exit 1
+          fi
+
+          echo "##vso[task.setvariable variable=runId]$runId"
+          echo "${{ env.BASE_PARADIME_BOLT_URL }}${runId}?workspaceUid=${{ env.WORKSPACE_ID }}"
+
+      - name: Watch Bolt Run Status
+        run: |
+          echo "${{ env.BASE_PARADIME_BOLT_URL }}$(runId)?workspaceUid=${{ env.WORKSPACE_ID }}"
+          while :
+          do
+            response=$(curl -s -X POST \
+              -H "Content-Type: application/json" \
+              -H "X-API-KEY: ${{ env.API_KEY }}" \
+              -H "X-API-SECRET: ${{ env.API_SECRET }}" \
+              -d "{
+                    \"query\": \"{ boltRunStatus(runId: $(runId)) { state } }\"
+                  }" "${{ env.API_URL }}")
+            echo $response
+
+            state=$(echo "$response" | jq -r '.data.boltRunStatus.state')
+
+            if [ "$state" != "RUNNING" ]; then
+              if [ "$state" != "SUCCESS" ]; then
+                exit 1
+              fi
+              exit 0
+            fi
+
+            sleep 10
+          done
