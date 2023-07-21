@@ -42,26 +42,25 @@ jobs:
 
       - name: Watch Bolt Run Status
         run: |
-          echo "${{ env.BASE_PARADIME_BOLT_URL }}${{ steps.trigger_bolt.outputs.runId }}"?workspaceUid=${{ env.WORKSPACE_ID }}"
           while :
           do
             response=$(curl -s -X POST \
               -H "Content-Type: application/json" \
-              -H "X-API-KEY: ${{ env.API_KEY }}" \
-              -H "X-API-SECRET: ${{ env.API_SECRET }}" \
+              -H "X-API-KEY: $API_KEY" \
+              -H "X-API-SECRET: $API_SECRET" \
               -d "{
-                    \"query\": \"{ boltRunStatus(runId: $(runId)) { state } }\"
-                  }" "${{ env.API_URL }}")
-            echo $response
-
+                    \"query\": \"{ boltRunStatus(runId: \\\"${{ steps.trigger_bolt.outputs.runId }}\\\") { state } }\"
+                  }" "$API_URL")
+            echo "$response"
+          
             state=$(echo "$response" | jq -r '.data.boltRunStatus.state')
-
+          
             if [ "$state" != "RUNNING" ]; then
               if [ "$state" != "SUCCESS" ]; then
                 exit 1
               fi
               exit 0
             fi
-
+          
             sleep 10
           done
