@@ -37,12 +37,12 @@ jobs:
             exit 1
           fi
 
-          echo "##vso[task.setvariable variable=runId]$runId"
+          echo "::set-output name=runId::$runId"
           echo "${{ env.BASE_PARADIME_BOLT_URL }}${runId}?workspaceUid=${{ env.WORKSPACE_ID }}"
 
       - name: Watch Bolt Run Status
         run: |
-          echo "${{ env.BASE_PARADIME_BOLT_URL }}$(runId)?workspaceUid=${{ env.WORKSPACE_ID }}"
+          echo "${{ env.BASE_PARADIME_BOLT_URL }}${{ steps.trigger_bolt.outputs.runId }}"?workspaceUid=${{ env.WORKSPACE_ID }}"
           while :
           do
             response=$(curl -s -X POST \
