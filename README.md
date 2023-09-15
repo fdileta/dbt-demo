@@ -1,28 +1,22 @@
-## dbt models for `jaffle_shop`
+Welcome to your new dbt project!
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 `jaffle_shop` is a fictional ecommerce store. This dbt project transforms raw
 data from an app database into a customers and orders model ready for analytics.
 =======
 The raw data from the app consists of customers, orders, and payments, with the
 following entity-relationship diagram:
+=======
+### Using the starter project
+>>>>>>> b2d7ad4a12fe20ba9cb8ae038a64bb6207acbffe
 
-![Jaffle Shop ERD](./dbt/etc/jaffle_shop_erd.png)
-
-This [dbt](https://www.getdbt.com/) project has a split personality:
-
-* **Tutorial**: The [master](https://github.com/fishtown-analytics/jaffle_shop/tree/master)
-  branch is a useful minimum viable dbt project to get new dbt users up and
-  running with their first dbt project. It includes [seed](https://docs.getdbt.com/docs/building-a-dbt-project/seeds)
-  files with generated data so a user can run this project on their own warehouse.
-* **Demo**: The [demo](https://github.com/fishtown-analytics/jaffle_shop/tree/demo/master)
-  branch is used to illustrate how we (Fishtown Analytics) would structure a dbt
-  project. The project assumes that your raw data is already in your warehouse,
-  so therefore the repo cannot be run as a standalone project. The demo is more
-  complex than the tutorial as it is structured in a way that can be extended for
-  larger projects.
+Try running the following commands:
+- dbt run
+- dbt test
 
 
+<<<<<<< HEAD
 >>>>>>> 1ab8b0ccb3b94149380aa8ab5b17a5a8a54d764b
 
 ### Using this project as a tutorial
@@ -97,3 +91,11 @@ For more information on dbt:
 * Join the [chat](http://slack.getdbt.com/) on Slack for live questions and support.
 
 ---
+=======
+### Resources:
+- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
+- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
+- Join the [chat](http://slack.getdbt.com/) on Slack for live discussions and support
+- Find [dbt events](https://events.getdbt.com) near you
+- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+>>>>>>> b2d7ad4a12fe20ba9cb8ae038a64bb6207acbffe
