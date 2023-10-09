@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: looker_demo
+    loader: looker_extractor
+    freshness: # default freshness
+      warn_after: {count: 1000, period: day}
+      error_after: {count: 1000, period: day}
+    loaded_at_field: created_at
+    tables:
+      - name: distribution_centers
+        freshness: null
+      - name: inventory_items
+        freshness: # make this a little more strict
+          warn_after: {count: 1000, period: day}
+          error_after: {count: 1000, period: day}
+      - name: products
+        freshness: null
+
+  - name: analytics_raw
+    schema: raw
+    loader: internal
+    freshness: # default freshness
+      warn_after: {count: 1000, period: day}
+      error_after: {count: 1000, period: day}
+      filter: date_diff(loaded_at, current_timestamp(), DAY) < 2
+    loaded_at_field: loaded_at
+    tables:
+      - name: ad_spend_raw
+        freshness: # make this more relaxed
+          warn_after: {count: 1000, period: day}
+          error_after: {count: 1000, period: day}
+      - name: customer_conversions_raw
+      - name: sessions_raw

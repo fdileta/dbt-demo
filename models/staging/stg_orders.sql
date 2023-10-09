@@ -1,20 +1,10 @@
-{{
-    config(
-        materialized='view',
-        schema='staging',
-    )
-}}
-
 with source as (
 
     {#-
     Normally we would select from the table here, but we are using seeds to load
     our data in this project
     #}
-    select name from {{ ref('raw_orders') }}
-
-
-    
+    select * from {{ source('sheets_sources', 'ingested_raw_orders') }}
 
 ),
 
@@ -31,4 +21,3 @@ renamed as (
 )
 
 select * from renamed
-where 1=1
