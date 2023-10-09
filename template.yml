@@ -10,6 +10,7 @@ config:
 jaffle_shop:
   target: dev
   outputs:
+  
     dev:
       type: bigquery
       method: service-account

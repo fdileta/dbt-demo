@@ -1,7 +1,7 @@
 {{
     config(
         materialized='table',
-        schema='staging',
+        schema='transformer'
     )
 }}
 
@@ -16,6 +16,7 @@ with source as (
 ),
 
 renamed as (
+    
 
     select
         id as payment_id,
